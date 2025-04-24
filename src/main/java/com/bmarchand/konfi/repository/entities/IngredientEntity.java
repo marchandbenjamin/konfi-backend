@@ -26,8 +26,6 @@ public class IngredientEntity {
 
     private String unit;
 
-    @ManyToOne
-    @JoinColumn(name = "recipe_id", nullable = false)
-    private RecipeEntity recipe;
-
+    @Column(name = "recipe_id", nullable = false)
+    private Long recipeId;
 }

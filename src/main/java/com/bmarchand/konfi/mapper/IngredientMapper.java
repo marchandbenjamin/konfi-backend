@@ -8,13 +8,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class IngredientMapper {
 
-    IngredientEntity toEntity(Ingredient dto) {
+    IngredientEntity toEntity(Long recipeId, Ingredient dto) {
         return IngredientEntity
                 .builder()
                 .id(dto.getId())
                 .name(dto.getName())
                 .quantity(dto.getQuantity())
                 .unit(dto.getUnit())
+                .recipeId(recipeId)
                 .build();
     }
 

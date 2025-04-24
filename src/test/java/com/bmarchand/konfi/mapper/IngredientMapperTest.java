@@ -3,6 +3,7 @@ package com.bmarchand.konfi.mapper;
 import com.bmarchand.konfi.controller.request.IngredientRequest;
 import com.bmarchand.konfi.fixture.RecipeFixture;
 import com.bmarchand.konfi.repository.entities.IngredientEntity;
+import com.bmarchand.konfi.repository.entities.RecipeEntity;
 import com.bmarchand.konfi.service.model.Ingredient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,7 +27,7 @@ class IngredientMapperTest {
         IngredientEntity expectedEntity = RecipeFixture.getValidIngredientEntity();
 
         // Act
-        IngredientEntity result = ingredientMapper.toEntity(dto);
+        IngredientEntity result = ingredientMapper.toEntity(dto.getId(), dto);
 
         // Assert
         assertEquals(expectedEntity.getId(), result.getId());

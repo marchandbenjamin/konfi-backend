@@ -24,8 +24,6 @@ public class StepEntity {
     @Column(name = "step_order", nullable = false)
     private Integer stepOrder;
 
-    @ManyToOne
-    @JoinColumn(name = "recipe_id", nullable = false)
-    private RecipeEntity recipe;
-
+    @Column(name = "recipe_id", nullable = false)
+    private Long recipeId;
 }

@@ -1,7 +1,6 @@
 package com.bmarchand.konfi.controller;
 
 import com.bmarchand.konfi.controller.request.RecipeRequest;
-import com.bmarchand.konfi.exception.RecipeNotFoundException;
 import com.bmarchand.konfi.service.RecipeService;
 import com.bmarchand.konfi.service.model.Recipe;
 import lombok.AllArgsConstructor;
@@ -34,24 +33,25 @@ public class RecipeController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createRecipe() {
-        Recipe recipe = recipeService.createRecipe();
+    public ResponseEntity<Recipe> createRecipe(@RequestBody RecipeRequest recipeRequest) {
+        Recipe recipe = recipeService.createRecipe(recipeRequest);
         return ResponseEntity
-                .status(HttpStatus.NOT_IMPLEMENTED)
-                .body("Feature not yet implemented");
+                .status(HttpStatus.CREATED)
+                .body(recipe);
     }
 
-    @PatchMapping
-    public ResponseEntity<String> updateRecipe(@RequestBody RecipeRequest recipeRequest) {
-        Recipe recipe = recipeService.updateRecipe(recipeRequest);
+    @PatchMapping("/{recipeId}")
+    public ResponseEntity<Recipe> updateRecipe(
+            @PathVariable Long recipeId,
+            @RequestBody RecipeRequest recipeRequest) {
+        Recipe recipe = recipeService.updateRecipe(recipeId, recipeRequest);
         return ResponseEntity
-                .status(HttpStatus.NOT_IMPLEMENTED)
-                .body("Feature not yet implemented");
+                .status(HttpStatus.OK)
+                .body(recipe);
     }
 
-    @DeleteMapping
-    @ExceptionHandler(RecipeNotFoundException.class)
-    public void deleteRecipe(@RequestParam Long recipeId) {
+    @DeleteMapping("/{recipeId}")
+    public void deleteRecipe(@PathVariable Long recipeId) {
         recipeService.deleteRecipe(recipeId);
     }
 }

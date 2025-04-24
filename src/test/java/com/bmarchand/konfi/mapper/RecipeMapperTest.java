@@ -39,8 +39,8 @@ class RecipeMapperTest {
 
         RecipeEntity expectedEntity = RecipeFixture.getValidRecipeEntity();
 
-        Mockito.when(stepMapper.toEntity(Mockito.any(Step.class))).thenReturn(StepEntity.builder().build());
-        Mockito.when(ingredientMapper.toEntity(Mockito.any(Ingredient.class))).thenReturn(IngredientEntity.builder().build());
+        Mockito.when(stepMapper.toEntity(Mockito.any(), Mockito.any())).thenReturn(StepEntity.builder().build());
+        Mockito.when(ingredientMapper.toEntity(Mockito.any(), Mockito.any())).thenReturn(IngredientEntity.builder().build());
 
         // Act
         RecipeEntity result = recipeMapper.toEntity(dto);

@@ -2,6 +2,7 @@ package com.bmarchand.konfi.mapper;
 
 import com.bmarchand.konfi.controller.request.StepRequest;
 import com.bmarchand.konfi.fixture.RecipeFixture;
+import com.bmarchand.konfi.repository.entities.RecipeEntity;
 import com.bmarchand.konfi.repository.entities.StepEntity;
 import com.bmarchand.konfi.service.model.Step;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,7 +27,7 @@ class StepMapperTest {
         StepEntity expectedEntity = RecipeFixture.getValidStepEntity();
 
         // Act
-        StepEntity result = stepMapper.toEntity(dto);
+        StepEntity result = stepMapper.toEntity(dto.getId(), dto);
 
         // Assert
         assertEquals(expectedEntity.getId(), result.getId());

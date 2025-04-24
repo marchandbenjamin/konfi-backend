@@ -8,12 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class StepMapper {
 
-    StepEntity toEntity(Step dto) {
+    StepEntity toEntity(Long recipeId, Step dto) {
         return StepEntity
                 .builder()
                 .id(dto.getId())
                 .description(dto.getDescription())
                 .stepOrder(dto.getStepOrder())
+                .recipeId(recipeId)
                 .build();
     }
 

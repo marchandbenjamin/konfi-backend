@@ -23,11 +23,11 @@ public class RecipeEntity {
     @Column(nullable = false)
     private String title;
 
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Builder.Default
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "recipe_id")
     private List<IngredientEntity> ingredients = new ArrayList<>();
 
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Builder.Default
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "recipe_id")
     private List<StepEntity> steps = new ArrayList<>();
 }
