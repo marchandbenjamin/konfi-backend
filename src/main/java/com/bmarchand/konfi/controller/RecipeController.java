@@ -1,6 +1,7 @@
 package com.bmarchand.konfi.controller;
 
 import com.bmarchand.konfi.controller.request.RecipeRequest;
+import com.bmarchand.konfi.exception.RecipeNotFoundException;
 import com.bmarchand.konfi.service.RecipeService;
 import com.bmarchand.konfi.service.model.Recipe;
 import lombok.AllArgsConstructor;
@@ -25,6 +26,13 @@ public class RecipeController {
                 .body(allRecipe);
     }
 
+    @GetMapping("/{recipeId}")
+    public ResponseEntity<Recipe> getRecipeById(@PathVariable Long recipeId) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(recipeService.getRecipeById(recipeId));
+    }
+
     @PostMapping
     public ResponseEntity<String> createRecipe() {
         Recipe recipe = recipeService.createRecipe();
@@ -42,8 +50,8 @@ public class RecipeController {
     }
 
     @DeleteMapping
-    @ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
-    public void deleteRecipe() {
-        recipeService.deleteRecipe();
+    @ExceptionHandler(RecipeNotFoundException.class)
+    public void deleteRecipe(@RequestParam Long recipeId) {
+        recipeService.deleteRecipe(recipeId);
     }
 }
