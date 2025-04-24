@@ -1,4 +1,4 @@
-# 🥘 Konfi Notes — Cooking Recipe Blog Backend
+# 🍱 Konfi Notes — Cooking Recipe Blog Backend
 
 **Konfi Notes** is a personal project aiming to power a cooking recipe blog. This backend application provides a REST API to manage recipes, ingredients, and cooking steps.
 
