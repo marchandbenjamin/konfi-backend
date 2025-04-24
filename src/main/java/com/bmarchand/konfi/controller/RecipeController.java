@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/recipe")
 @AllArgsConstructor
@@ -16,11 +18,11 @@ public class RecipeController {
     private RecipeService recipeService;
 
     @GetMapping
-    public ResponseEntity<String> getRecipe() {
-        Recipe recipe = recipeService.getRecipe();
+    public ResponseEntity<List<Recipe>> getAllRecipe() {
+        List<Recipe> allRecipe = recipeService.getAllRecipe();
         return ResponseEntity
-                .status(HttpStatus.NOT_IMPLEMENTED)
-                .body("Feature not yet implemented");
+                .status(HttpStatus.OK)
+                .body(allRecipe);
     }
 
     @PostMapping

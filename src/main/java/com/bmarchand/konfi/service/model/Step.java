@@ -1,10 +1,10 @@
 package com.bmarchand.konfi.service.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
+@Builder
 public class Step {
     private Long id;
     private String description;

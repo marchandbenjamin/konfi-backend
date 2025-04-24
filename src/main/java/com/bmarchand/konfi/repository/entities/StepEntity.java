@@ -1,9 +1,17 @@
 package com.bmarchand.konfi.repository.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {"recipe_id", "step_order"}))
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class StepEntity {
 
     @Id

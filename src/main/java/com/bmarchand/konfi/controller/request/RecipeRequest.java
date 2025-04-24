@@ -1,10 +1,12 @@
 package com.bmarchand.konfi.controller.request;
 
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 
 import java.util.List;
 
-@Getter
+@Data
+@Builder
 public class RecipeRequest {
     private String title;
     private List<IngredientRequest> ingredients;

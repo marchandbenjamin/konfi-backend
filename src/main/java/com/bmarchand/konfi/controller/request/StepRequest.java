@@ -1,8 +1,10 @@
 package com.bmarchand.konfi.controller.request;
 
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 
-@Getter
+@Data
+@Builder
 public class StepRequest {
     private String description;
     private int stepOrder;

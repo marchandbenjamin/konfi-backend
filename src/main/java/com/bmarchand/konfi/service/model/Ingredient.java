@@ -1,12 +1,12 @@
 package com.bmarchand.konfi.service.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
+@Data
+@Builder
 public class Ingredient {
     private Long id;
     private String name;

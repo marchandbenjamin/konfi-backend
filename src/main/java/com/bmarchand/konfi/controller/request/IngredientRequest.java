@@ -1,10 +1,12 @@
 package com.bmarchand.konfi.controller.request;
 
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
-@Getter
+@Data
+@Builder
 public class IngredientRequest {
     private String name;
     private BigDecimal quantity;

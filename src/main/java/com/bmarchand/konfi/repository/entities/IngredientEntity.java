@@ -1,11 +1,18 @@
 package com.bmarchand.konfi.repository.entities;
 
-import com.bmarchand.konfi.service.model.Recipe;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @Entity
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class IngredientEntity {
 
     @Id

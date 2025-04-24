@@ -1,0 +1,41 @@
+{
+  "id": 1,
+  "title": "Japanese Curry",
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "Chicken",
+      "quantity": 500.00,
+      "unit": "grams"
+    },
+    {
+      "id": 2,
+      "name": "Carrot",
+      "quantity": 2,
+      "unit": "pieces"
+    },
+    {
+      "id": 3,
+      "name": "Potato",
+      "quantity": 3,
+      "unit": "pieces"
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "description": "Chop the chicken into pieces.",
+      "step_order": 1
+    },
+    {
+      "id": 2,
+      "description": "Peel and chop the carrots and potatoes.",
+      "step_order": 2
+    },
+    {
+      "id": 3,
+      "description": "Cook the ingredients with curry sauce.",
+      "step_order": 3
+    }
+  ]
+}
